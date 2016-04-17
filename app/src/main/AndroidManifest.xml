@@ -10,10 +10,8 @@
         <activity android:name="com.example.josien.mrpotatohead.mrPotatohead">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

@@ -8,19 +8,27 @@ import android.widget.ImageView;
 
 public class mrPotatohead extends AppCompatActivity {
 
+    // save state of checkboxes
+    // unfortunately, I don't get how to also save the state of the drawables when changing the
+    // orientation view
+    // I have read a lot about it, the result is that the checkboxes work, but the drawables not..
+    // for instance looking at onSaveInstanceState and onRestoreInstanceState but still doesn't work
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mr_potatohead);
     }
 
+    // looking at the views of checkboxes that are clicked (so if they are checked or not)
     public void selectitem(View view) {
         boolean checked = ((CheckBox) view).isChecked();
 
+        // the next 10 steps are about view the drawable when checkbox is checked, else drawable
+        // is invisible
         switch (view.getId()) {
             case R.id.arms_show:
                 ImageView arms = (ImageView) findViewById(R.id.arms);
-                if (checked) {
+                if (checked)  {
                     arms.setVisibility(View.VISIBLE);
                 } else {
                     arms.setVisibility(View.INVISIBLE);
@@ -126,6 +134,5 @@ public class mrPotatohead extends AppCompatActivity {
                 }
                 break;
         }
-
     }
 }
